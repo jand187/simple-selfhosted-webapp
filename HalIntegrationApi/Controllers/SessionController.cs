@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using HalIntegration.Common;
 using Microsoft.AspNetCore.Mvc;
 
 namespace HalIntegrationApi.Controllers
@@ -16,7 +17,7 @@ namespace HalIntegrationApi.Controllers
         // POST: api/Default
         [HttpPost]
         // public IActionResult Post([FromBody] string sessionId)
-        public IActionResult Post([FromBody] SessionRequest sessionRequest)
+        public IActionResult Post(SessionRequest sessionRequest)
         {
             return new ContentResult
             {
@@ -24,10 +25,5 @@ namespace HalIntegrationApi.Controllers
                 Content = sessionRequest.SessionId
             };
         }
-    }
-
-    public class SessionRequest
-    {
-        public string SessionId { get; set; }
     }
 }
